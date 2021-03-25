@@ -1,0 +1,21 @@
+// Absolute positioning mixin
+
+/* Usage:
+ @include center(vertical | horizontal | both);
+*/
+
+@mixin center($position) {
+  position: absolute;
+
+  @if $position == "vertical" {
+    top: 50%;
+    transform: translateY(-50%);
+  } @else if $position == "horizontal" {
+    left: 50%;
+    transform: translate(-50%);
+  } @else if $position == "both" {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

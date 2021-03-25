@@ -1,0 +1,86 @@
+/**
+ * Author Mike 
+ * Main
+ */
+
+@import '~bootstrap/scss/functions';
+
+@import 'utilities/variables';
+@import '~bootstrap/scss/variables';
+
+// Bootstrap mixins
+@import './node_modules/bootstrap/scss/mixins';
+
+// Custom mixins
+@import 'mixins/all';
+
+// Bootstrap components
+@import '~bootstrap/scss/root';
+@import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/type';
+@import '~bootstrap/scss/images';
+@import '~bootstrap/scss/code';
+@import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/tables';
+@import '~bootstrap/scss/forms';
+@import '~bootstrap/scss/buttons';
+@import '~bootstrap/scss/transitions';
+@import '~bootstrap/scss/dropdown';
+@import '~bootstrap/scss/button-group';
+@import '~bootstrap/scss/input-group';
+@import '~bootstrap/scss/custom-forms';
+@import '~bootstrap/scss/nav';
+@import '~bootstrap/scss/navbar';
+@import '~bootstrap/scss/card';
+@import '~bootstrap/scss/breadcrumb';
+@import '~bootstrap/scss/pagination';
+@import '~bootstrap/scss/badge';
+@import '~bootstrap/scss/jumbotron';
+@import '~bootstrap/scss/alert';
+@import '~bootstrap/scss/progress';
+@import '~bootstrap/scss/media';
+@import '~bootstrap/scss/list-group';
+@import '~bootstrap/scss/close';
+@import '~bootstrap/scss/modal';
+@import '~bootstrap/scss/tooltip';
+@import '~bootstrap/scss/popover';
+@import '~bootstrap/scss/carousel';
+@import '~bootstrap/scss/utilities';
+@import '~bootstrap/scss/print';
+
+@import 'wordpress/basic-elements';
+@import 'wordpress/comments';
+@import 'wordpress/post-content';
+@import 'wordpress/sidebar';
+
+//Vendor files
+//(umcomment if using gravity forms in project)
+@import 'vendor/gravity_forms';
+
+// Base
+@import 'base/reset';
+@import 'base/base';
+@import 'base/fonts';
+@import 'base/typography';
+
+// Layout
+@import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/sidebar';
+@import 'layout/topbar.scss';
+@import 'layout/grid';
+@import 'layout/footer';
+
+// Custom components
+// @import 'components/buttons';
+// @import 'components/inputs';
+// @import 'components/buttons';
+// @import 'components/bottom-contact-partial';
+// @import 'components/modal';
+
+// Theme aka global
+@import 'theme/theme';
+
+// Pages
+@import 'pages/home-page';
+// @import 'pages/press';

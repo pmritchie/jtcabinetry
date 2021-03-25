@@ -1,0 +1,54 @@
+:root {
+  font-size: 62.5%;
+  body {
+    color: $brown-grey;
+    line-height: 1.67;
+    font-weight: $font-weight-normal;
+    @include rem(font-size, 18px);
+  }
+}
+
+h1 {
+  @include fluid-font(45px, 60px);
+  color: $purple-brown;
+  font-family: $font-family-alt;
+}
+
+h2 {
+  @include fluid-font(32px, 42px);
+  color: $dark-brown;
+  font-family: $font-family-alt;
+}
+
+h3 {
+  @include fluid-font(21px, 28px);
+  color: $purple-brown;
+}
+
+h4 {
+  @include fluid-font(21px, 24px);
+  color: $purple-brown;
+}
+
+h5 {
+  @include fluid-font(18px, 21px);
+}
+
+h6 {
+  @include fluid-font(16px, 18px);
+}
+p {
+  @include fluid-font(16px, 18px);
+  color: $dark-brown;
+}
+.small {
+  @include rem(font-size, 16px);
+}
+
+.yellow-title {
+  @include rem(font-size, 16px);
+}
+
+a {
+  @include fluid-font(16px, 18px);
+}

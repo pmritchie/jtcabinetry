@@ -1,0 +1,183 @@
+/** Gravity Forms Styling Helper
+ * @author Kenny <kenny@growwithom.com>
+ *
+*/
+
+.gform_wrapper form {
+  margin-bottom: 0px;
+  padding: 16px 15px 30px;
+  background-color: #4a4a4a;
+  position: relative;
+  #field_1_6 {
+    position: absolute;
+    bottom: 0px;
+    font-size: 13px;
+    font-family: $font-family;
+    color: $white;
+    padding-right: 10px;
+  }
+  .top_label input.medium {
+    width: 100%;
+    background-color: #ffffff;
+  }
+  .gfield_checkbox {
+    li {
+      position: relative;
+      list-style-type: none;
+      label {
+        font-size: 12px;
+        &:after {
+          content: '';
+          width: 25px;
+          height: 25px;
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 4px;
+          border-radius: 3px;
+          z-index: 0;
+          border-radius: 4px;
+          border: solid 2px #d5d7db;
+        }
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 7px;
+          height: 18px;
+          border: solid red;
+          border-width: 0 3px 3px 0;
+          left: 10px;
+          top: 4px;
+          transform: rotate(45deg);
+          opacity: 0;
+          z-index: 1;
+          transition: all 100ms;
+        }
+      }
+    }
+  }
+
+  input[type='checkbox'] {
+    opacity: 0;
+    outline: none;
+    z-index: 100;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    appearance: none;
+    cursor: pointer;
+    + label {
+      cursor: pointer;
+    }
+    &:checked + label {
+      &:before {
+        opacity: 1;
+        top: 6px;
+      }
+    }
+  }
+}
+
+.gform_wrapper ul {
+  padding: 0px;
+}
+.gform_wrapper li {
+  list-style-type: none;
+  margin-bottom: 18px;
+}
+
+.gform_wrapper .gfield_required {
+  padding-left: 1px;
+  color: $danger;
+}
+
+.gform_wrapper input[type='email'],
+.gform_wrapper input[type='date'],
+.gform_wrapper input[type='datetime'],
+.gform_wrapper input[type='datetime-local'],
+.gform_wrapper input[type='month'],
+.gform_wrapper input[type='number'],
+.gform_wrapper input[type='password'],
+.gform_wrapper input[type='search'],
+.gform_wrapper input[type='tel'],
+.gform_wrapper input[type='text'],
+.gform_wrapper input[type='time'],
+.gform_wrapper input[type='week'],
+.gform_wrapper input[type='url'],
+.gform_wrapper select,
+.gform_wrapper textarea {
+  //@extend .form-control;
+  border: 1px solid #979797;
+  background: $white;
+  height: 45px;
+}
+.gform_wrapper textarea {
+  height: 100%;
+  max-height: 80px;
+  min-height: 80px;
+}
+.gform_wrapper select {
+  -webkit-appearance: menulist-button;
+}
+
+.gform_wrapper .button {
+  border: 1px solid white;
+  //@extend .btn;
+}
+
+.gform_wrapper .gfield_label {
+  // font-family: $open-sans;
+  color: $white;
+  font-size: 16px;
+  line-height: 2.17;
+  margin-bottom: 0;
+  letter-spacing: 0.26px;
+}
+
+.gform_wrapper .gfield_error {
+  .gfield_label {
+    font-size: 12px;
+    line-height: 2.17;
+  }
+
+  input,
+  select,
+  textarea {
+    //@extend .alert-danger;
+  }
+}
+
+.gfield_required {
+  display: none;
+}
+
+.validation_error {
+  //@extend .alert;
+  //@extend .alert-danger;
+}
+
+.validation_message {
+  display: none;
+}
+.gform_footer {
+  .gform_button {
+    height: 50px;
+    margin: 20px auto 88px auto;
+    width: 100% !important;
+    background-color: $sunflower-yellow;
+    border-radius: 30px;
+    border: none;
+    font-weight: $font-weight-bold;
+    font-size: 18px;
+    &:hover {
+      color: $white !important;
+    }
+
+    @include media-breakpoint-up(lg) {
+      max-width: 370px;
+    }
+  }
+}

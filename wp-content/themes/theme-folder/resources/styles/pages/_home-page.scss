@@ -1,0 +1,17 @@
+.home {
+    .hero-section {
+        padding: 200px 0;
+        background-color: teal;
+        text-align: center;
+        @include media-breakpoint-down(sm){
+            padding: 100px;
+        }
+        a {
+            color: black;
+        }
+    }
+    .feature-section {
+        padding: 100px 0;
+        text-align: center;
+    }
+}

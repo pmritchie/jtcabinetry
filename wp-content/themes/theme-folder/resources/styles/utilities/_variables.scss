@@ -1,0 +1,122 @@
+//Mixin Settings
+$rem-fallback: true;
+$rem-baseline: 16px;
+$rem-px-only: false;
+$fluid-font-min-size: 480px;
+$fluid-font-max-size: 1140px;
+
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+
+// Colors
+$white: #fff;
+$off-white: #f2f2f2;
+$purple-brown: #231e21;
+$sunflower-yellow: #fdce00;
+$squash: #f7911e;
+$jungle-green: #027240;
+$dark-brown: #301e10;
+$light-blue-grey: #c2d1d9;
+$brown-grey: #7d7c7c;
+$emerald: #009347;
+$sunflower-yellow-two: #fee800;
+
+$primary: $sunflower-yellow;
+$dark: $purple-brown;
+
+$theme-colors: (
+  'primary': $sunflower-yellow,
+  'secondary': $purple-brown,
+  'light': $off-white,
+  'dark': $dark,
+);
+
+// Default element colors
+$body-bg: $white;
+$body-color: $brown-grey;
+// $text-muted: $dark;
+
+// Links
+$link-color: $purple-brown;
+$link-decoration: underline;
+$link-hover-color: darken($link-color, 15%);
+$link-hover-decoration: none;
+
+$enable-caret: false;
+
+// Font Family
+$font-family-sans: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto,
+  'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+  'Segoe UI Symbol';
+
+$font-family-serif: 'Open Sans', sans-serif;
+
+// Header font family
+$font-family-secondary: 'Source Sans Pro', sans-serif;
+$font-family-peperoncino: 'Peperoncino Sans W05 Regular';
+
+// Base font family
+$font-family: $font-family-serif;
+$font-family-base: $font-family;
+$font-family-alt: $font-family-peperoncino;
+
+// Font Weight
+$font-weight-thin: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
+
+$font-weight-base: $font-weight-normal;
+
+// Navbar
+// $navbar-light-color: $black;
+// $navbar-light-hover-color: $sunflower-yellow;
+// $navbar-light-active-color: rgba($black, 0.9);
+$navbar-light-toggler-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$black}' stroke-linecap='square' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+$navbar-light-toggler-border-color: transparent;
+$navbar-toggler-font-size: 2.5rem;
+
+// Buttons
+$btn-box-shadow: none;
+$btn-font-family: $font-family;
+$btn-font-size: 13 * 16;
+$btn-font-weight: $font-weight-medium;
+$btn-link-color: $purple-brown;
+$btn-link-hover-color: $white;
+
+// Inputs
+$label-margin-bottom: 0.5rem;
+$input-font-family: $font-family;
+$input-font-size: 1rem;
+$input-font-weight: $font-weight-base;
+$input-bg: $white;
+$input-color: $gray-700;
+$input-border-color: $gray-400;
+$input-border-width: 1px;
+$input-placeholder-color: $gray-600;
+$input-plaintext-color: $body-color;
+$input-height: calc(1.5em + 0.75rem + 2px);
+
+//Pagination
+$pagination-color: $black;
+$pagination-bg: $white;
+$pagination-border-color: $brown-grey;
+$pagination-hover-color: $white;
+$pagination-hover-bg: $jungle-green;
+$pagination-hover-border-color: $brown-grey;
+$pagination-active-color: $white;
+$pagination-active-bg: $emerald;
+$pagination-active-border-color: $emerald;

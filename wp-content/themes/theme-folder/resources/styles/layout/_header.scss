@@ -1,0 +1,14 @@
+// Header
+
+header {
+  position: relative;
+  background: teal;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 999;
+}
+
+.is-sticky {
+  position: fixed;
+}
