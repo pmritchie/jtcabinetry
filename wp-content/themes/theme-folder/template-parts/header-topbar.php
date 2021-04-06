@@ -2,7 +2,11 @@
 <div class="container-fluid">
 	<div class="container">
 		<div class="row topbar-row">
-			<ul>
+			<div class="page-heading">
+			<p><strong>JT Cabinetry</strong>
+			 Kitchen cabinets, bathroom vanities and more!</p> 
+			</div>
+			<!-- <ul>
 				<li>
 					<a href=""
 						target="_blank">
@@ -96,9 +100,9 @@
 						</svg>
 					</a>
 				</li>
-			</ul>
-			<p>Call Now</p>
-			<a href="tel:4073909999">555-555-5555</a>
+			</ul> -->
+			<!-- <p>Call Now</p> -->
+			<!-- <a href="tel:4073909999">555-555-5555</a> -->
 		</div>
 	</div>
 </div>

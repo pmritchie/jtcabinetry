@@ -11,37 +11,40 @@ header {
   position: absolute;
   z-index: 5;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
   right: 19px;
-
-  ul {
-    display: flex;
-    flex-direction: row;
-    right: 10%;
-    @include media-breakpoint-down(sm) {
-      display: none;
-    }
-    li {
-      margin-right: 12px;
-      padding-top: 6px;
-      &:last-child {
-        margin-right: 26px;
-      }
-    }
+  width: 100%;
+  .page-heading {
+    margin: 0 auto;
   }
-  p,
-  a {
-    padding-top: 10px;
-    font-size: 16px;
-    color: $purple-brown;
-    font-weight: $font-weight-semibold;
-  }
-  p {
-    margin-right: 6px;
-    @include media-breakpoint-down(sm) {
-      display: none;
-    }
-  }
+  // ul {
+  //   display: flex;
+  //   flex-direction: row;
+  //   right: 10%;
+  //   @include media-breakpoint-down(sm) {
+  //     display: none;
+  //   }
+  //   li {
+  //     margin-right: 12px;
+  //     padding-top: 6px;
+  //     &:last-child {
+  //       margin-right: 26px;
+  //     }
+  //   }
+  // }
+  // p,
+  // a {
+  //   padding-top: 10px;
+  //   font-size: 16px;
+  //   color: $purple-brown;
+  //   font-weight: $font-weight-semibold;
+  // }
+  // p {
+  //   margin-right: 6px;
+  //   @include media-breakpoint-down(sm) {
+  //     display: none;
+  //   }
+  // }
 }
 // .top-bar {
 //   padding-top: 4px;
