@@ -10897,6 +10897,14 @@ header .container {
   padding-bottom: 80px;
   background-color: white;
 }
+.home .hero-section .img-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.home .hero-section .img-wrapper img {
+  width: 100vw;
+  height: 75vh;
+}
 .home .hero-section .hero-content {
   display: flex;
   justify-content: space-between;

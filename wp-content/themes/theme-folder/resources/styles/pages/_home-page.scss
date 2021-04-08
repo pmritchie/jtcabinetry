@@ -5,6 +5,14 @@
         // @include media-breakpoint-down(sm){
         //     padding: 100px;
         // }
+        .img-wrapper {
+            display: flex;
+            justify-content: center;
+            img {
+                width: 100vw;
+                height: 75vh;
+            }
+        }
         .hero-content {
             display: flex;
             justify-content: space-between;

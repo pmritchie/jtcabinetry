@@ -1240,11 +1240,12 @@ $(document).ready(function () {
   //   }
   // });
   $('.hero-slider').slick({
-    adaptiveHeight: false,
+    adaptiveHeight: true,
     mobileFirst: true,
     dots: true,
     infinite: true,
-    speed: 2000,
+    fade: true,
+    speed: 4000,
     autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
