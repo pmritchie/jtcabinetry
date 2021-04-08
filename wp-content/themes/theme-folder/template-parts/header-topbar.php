@@ -1,12 +1,8 @@
 
 <div class="container-fluid">
-	<div class="container">
-		<div class="row topbar-row">
-			<div class="page-heading">
-			<p><strong>JT Cabinetry</strong>
-			 Kitchen cabinets, bathroom vanities and more!</p> 
-			</div>
-			<!-- <ul>
+	<div class="row topbar-row">
+		<div class="top-bar col-12">
+			<ul>
 				<li>
 					<a href=""
 						target="_blank">
@@ -24,7 +20,7 @@
 						</svg>
 					</a>
 				</li>
-				<li>
+				<!-- <li>
 					<a href=""
 						target="_blank">
 						<svg xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +36,7 @@
 							</g>
 						</svg>
 					</a>
-				</li>
+				</li> -->
 				<li>
 					<a href=""
 						target="_blank">
@@ -100,9 +96,13 @@
 						</svg>
 					</a>
 				</li>
-			</ul> -->
-			<!-- <p>Call Now</p> -->
-			<!-- <a href="tel:4073909999">555-555-5555</a> -->
+			</ul> 
+			<p><strong>JT Cabinetry</strong>
+			Kitchen cabinets, bathroom vanities and more!</p> 	
+			<div class="call-now">
+				<p>Call Now: </p>
+				<a href="tel:4073909999">555-555-5555</a>
+			</div>
 		</div>
 	</div>
 </div>

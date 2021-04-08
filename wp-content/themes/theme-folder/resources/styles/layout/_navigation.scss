@@ -15,10 +15,14 @@ header {
     }
   }
   #main-nav {
-    padding-top: 38px;
-    justify-content: flex-end;
+    justify-content: space-between;
     @include media-breakpoint-down(lg) {
       right: -5px;
+    }
+    #menu-main-menu {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
     }
   }
 
@@ -33,27 +37,6 @@ header {
 
     .navbar-brand {
       height: 100%;
-    }
-
-    .book-link {
-      position: relative;
-      display: none;
-      @include media-breakpoint-down(lg) {
-        display: block;
-        margin-left: auto;
-        margin-right: 5px;
-        margin-top: 1%;
-        height: 24px;
-        font-size: 14px;
-        max-width: 103px;
-        text-align: center;
-        padding: 0;
-        text-transform: unset;
-        &:hover {
-          background-color: $squash;
-          color: $black;
-        }
-      }
     }
     .hamburger {
       background-color: black;
@@ -125,13 +108,20 @@ header {
             background-color: $squash;
             color: $black !important;
           }
-          @include media-breakpoint-down(lg) {
+          @include media-breakpoint-down(md) {
             background-color: transparent;
             font-weight: $font-weight-semibold;
             height: inherit;
             width: inherit;
           }
         }
+      }
+      &:not(:last-of-type){
+        border-right: 1px solid black;
+        padding-right: 5%;
+        // @include media-breakpoint-down(lg){
+        //   padding-right: 2%;
+        // }
       }
     }
   }

@@ -4,7 +4,7 @@
   role="banner">
   <!-- nav -->
   <?php require_once(get_template_directory() . '/template-parts/header-topbar.php'); ?>
-  <nav class="navbar navbar-expand-xl navbar-light"
+  <nav class="navbar navbar-expand-lg navbar-light"
     role="navigation">
     <div class="container">
       <div class="navbar-brand">

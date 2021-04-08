@@ -29,41 +29,39 @@
 <?php if (have_rows('hero')) : ?>
 <?php while (have_rows('hero')) : the_row(); ?>
 <section class="section hero-section">
-  <div class="container">
-    <div class="row">
+  <div class="container-fluid hero-slider">
+    <!-- <div class="row">
       <div class="col-12">
         <div class="hero-content">
         <p>Contact Us: <a href=mailto:<?php the_sub_field('email'); ?> title="click to email" tabindex="3"> <?php the_sub_field('email'); ?></a></p>
         <p>Call: <a href=<?php the_sub_field('phone_number'); ?> title="click to call" tabindex="4"><?php the_sub_field('phone_number'); ?> </a></p>
         </div>
       </div>
-    </div>
-    <div class="row">
+    </div> -->
     <?php 
-      $image_one = get_sub_field('image_one');
-      $image_two = get_sub_field('image_two');
-      $image_three = get_sub_field('image_three');
-      $image_four = get_sub_field('image_four');
-    ?>
-      <div class="col-lg-3">
+        $image_one = get_sub_field('image_one');
+        $image_two = get_sub_field('image_two');
+        $image_three = get_sub_field('image_three');
+        $image_four = get_sub_field('image_four');
+      ?>
+    <div class="row">
         <div class="img-wrapper">
           <img src="<?php echo $image_one['url']?>"/>
         </div>
-      </div>
-      <div class="col-lg-3">
+    </div>
+    <div class="row">
         <div class="img-wrapper">
           <img src="<?php echo $image_two['url']?>"/>
         </div>
-      </div>
-      <div class="col-lg-3">
+    </div>
+    <div class="row">
         <div class="img-wrapper">
           <img src="<?php echo $image_three['url']?>"/>
         </div>
-      </div>
-      <div class="col-lg-3">
+    </div>
+    <div class="row">
         <div class="img-wrapper">
           <img src="<?php echo $image_four['url']?>"/>
-        </div>
       </div>
     </div>
   </div>
