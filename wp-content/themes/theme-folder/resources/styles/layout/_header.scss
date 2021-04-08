@@ -7,6 +7,9 @@ header {
   width: 100%;
   height: 120px;
   z-index: 999;
+  @include media-breakpoint-down(sm){
+    height: 90px;
+  }
 }
 
 .is-sticky {

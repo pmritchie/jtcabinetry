@@ -1242,7 +1242,7 @@ $(document).ready(function () {
   $('.hero-slider').slick({
     adaptiveHeight: true,
     mobileFirst: true,
-    dots: true,
+    dots: false,
     infinite: true,
     fade: true,
     speed: 4000,
