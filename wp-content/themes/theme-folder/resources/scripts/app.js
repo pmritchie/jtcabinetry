@@ -30,14 +30,27 @@ const lazyLoad = target => {
 //   }
 // });
 
-// $(document).ready(function() {
-//   // Bootstrap dropdown
-//   $(window).resize(function() {
-//     if ($(window).width() < 768) {
-//       $(".dropdown-toggle").attr("data-toggle", "dropdown");
-//     } else {
-//       $(".dropdown-toggle").removeAttr("data-toggle dropdown");
-//     }
-//   });
-// });
+$(document).ready(function() {
+  // Bootstrap dropdown
+  // $(window).resize(function() {
+  //   if ($(window).width() < 768) {
+  //     $(".dropdown-toggle").attr("data-toggle", "dropdown");
+  //   } else {
+  //     $(".dropdown-toggle").removeAttr("data-toggle dropdown");
+  //   }
+  // });
+
+  $('.hero-slider').slick({
+    adaptiveHeight: false,
+    mobileFirst: true,
+    dots: true,
+    infinite: true,
+    speed: 2000,
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: false,
+    nextArrow: false,
+  })
+});
 

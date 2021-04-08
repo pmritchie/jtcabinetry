@@ -56,6 +56,8 @@
 //Vendor files
 //(umcomment if using gravity forms in project)
 @import 'vendor/gravity_forms';
+@import 'libraries/slick-theme.scss';
+@import 'libraries/slick';
 
 // Base
 @import 'base/reset';

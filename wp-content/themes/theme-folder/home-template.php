@@ -29,7 +29,7 @@
 <?php if (have_rows('hero')) : ?>
 <?php while (have_rows('hero')) : the_row(); ?>
 <section class="section hero-section">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-12">
         <div class="hero-content">
@@ -38,13 +38,13 @@
         </div>
       </div>
     </div>
-    <div class="row">
-    <?php 
-      $image_one = get_sub_field('image_one');
-      $image_two = get_sub_field('image_two');
-      $image_three = get_sub_field('image_three');
-      $image_four = get_sub_field('image_four');
-    ?>
+    <div class="row hero-slider">
+      <?php 
+        $image_one = get_sub_field('image_one');
+        $image_two = get_sub_field('image_two');
+        $image_three = get_sub_field('image_three');
+        $image_four = get_sub_field('image_four');
+      ?>
       <div class="col-lg-3">
         <div class="img-wrapper">
           <img src="<?php echo $image_one['url']?>"/>
