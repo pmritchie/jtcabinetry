@@ -29,7 +29,7 @@
 <?php if (have_rows('hero')) : ?>
 <?php while (have_rows('hero')) : the_row(); ?>
 <section class="section hero-section">
-  <div class="container-fluid hero-slider">
+  <div class="container-fluid">
     <!-- <div class="row">
       <div class="col-12">
         <div class="hero-content">
@@ -44,22 +44,16 @@
         $image_three = get_sub_field('image_three');
         $image_four = get_sub_field('image_four');
       ?>
-    <div class="row">
+    <div class="row hero-slider">
         <div class="img-wrapper">
           <img src="<?php echo $image_one['url']?>"/>
         </div>
-    </div>
-    <div class="row">
         <div class="img-wrapper">
           <img src="<?php echo $image_two['url']?>"/>
         </div>
-    </div>
-    <div class="row">
         <div class="img-wrapper">
           <img src="<?php echo $image_three['url']?>"/>
         </div>
-    </div>
-    <div class="row">
         <div class="img-wrapper">
           <img src="<?php echo $image_four['url']?>"/>
       </div>
@@ -87,7 +81,7 @@
     <?php if (have_rows('feature_box_one')) : ?>
     <?php while (have_rows('feature_box_one')) : the_row(); ?>
     <?php $image_five = get_sub_field('feature_image_one'); ?>
-      <div class="col-lg-4">
+      <div class="col-lg-4 col-md-6 col-sm-12 feature-col">
         <div class="feature-box">
           <h3><?php the_sub_field('title_one')?></h3>
           
@@ -101,7 +95,7 @@
     <?php endif; ?>
     <?php if (have_rows('feature_box_two')) : ?>
     <?php while (have_rows('feature_box_two')) : the_row(); ?>
-      <div class="col-lg-4">
+      <div class="col-lg-4 col-md-6 col-sm-12 feature-col">
         <div class="feature-box">
         <h3><?php the_sub_field('title_two')?></h3>
 
@@ -117,7 +111,7 @@
     <?php if (have_rows('feature_box_three')) : ?>
     <?php while (have_rows('feature_box_three')) : the_row(); ?>
    <?php $image_seven = get_sub_field('feature_image_three'); ?>
-      <div class="col-lg-4">
+      <div class="col-lg-4 col-md-6 col-sm-12 feature-col">
         <div class="feature-box">
           <h3><?php the_sub_field('title_three')?></h3>
           

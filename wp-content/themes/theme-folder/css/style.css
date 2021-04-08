@@ -10558,6 +10558,11 @@ header {
   height: 120px;
   z-index: 999;
 }
+@media (max-width: 767.98px) {
+  header {
+    height: 90px;
+  }
+}
 
 .is-sticky {
   position: fixed;
@@ -10716,6 +10721,14 @@ header .container {
   justify-content: center;
   background-color: blue;
 }
+@media (max-width: 767.98px) {
+  .topbar-row {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    background-color: transparent;
+  }
+}
 .topbar-row .top-bar {
   display: flex;
   justify-content: space-between;
@@ -10734,13 +10747,13 @@ header .container {
   flex-direction: row;
   right: 10%;
 }
-@media (max-width: 767.98px) {
-  .topbar-row ul {
-    display: none;
-  }
-}
 .topbar-row ul li {
-  margin-right: 12px;
+  margin-right: 10px;
+}
+@media (max-width: 767.98px) {
+  .topbar-row ul li {
+    margin-right: 5px;
+  }
 }
 .topbar-row ul li:last-child {
   margin-right: 26px;
@@ -10748,12 +10761,27 @@ header .container {
 .topbar-row p,
 .topbar-row a {
   padding: 5px 0;
-  font-size: 16px;
-  color: #231e21;
+  color: #fff;
   font-weight: 600;
 }
+.topbar-row p,
+.topbar-row a {
+  font-size: 13px;
+}
+@media screen and (min-width: 480px) {
+  .topbar-row p,
+.topbar-row a {
+    font-size: calc( 13px + 3 * ((100vw - 480px) / 660) );
+  }
+}
+@media screen and (min-width: 1140px) {
+  .topbar-row p,
+.topbar-row a {
+    font-size: 16px;
+  }
+}
 @media (max-width: 767.98px) {
-  .topbar-row p {
+  .topbar-row .headline {
     display: none;
   }
 }
@@ -10894,7 +10922,6 @@ header .container {
 }
 
 .home .hero-section {
-  padding-bottom: 80px;
   background-color: white;
 }
 .home .hero-section .img-wrapper {
@@ -10944,10 +10971,20 @@ header .container {
   width: 100%;
   max-width: 340px;
 }
+@media (max-width: 991.98px) {
+  .home .about-section .image-row .img-wrapper {
+    margin: 0 auto;
+  }
+}
 .home .about-section .image-row .img-wrapper img {
   width: 100%;
   max-height: 215px;
   position: 50% 50%;
+}
+@media (max-width: 991.98px) {
+  .home .about-section .image-row .feature-col {
+    margin-top: 50px;
+  }
 }
 .home .about-section .image-row .feature-box {
   box-shadow: 0px 0px 8px 2px #adb5bd;

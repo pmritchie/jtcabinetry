@@ -97,7 +97,7 @@
 					</a>
 				</li>
 			</ul> 
-			<p><strong>JT Cabinetry</strong>
+			<p class="headline"><strong>JT Cabinetry</strong>
 			Kitchen cabinets, bathroom vanities and more!</p> 	
 			<div class="call-now">
 				<p>Call Now: </p>

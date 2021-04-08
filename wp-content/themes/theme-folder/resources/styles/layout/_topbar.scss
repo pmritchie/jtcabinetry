@@ -11,11 +11,18 @@ header {
   flex-direction: row;
   justify-content: center;
   background-color: blue;
+  @include media-breakpoint-down(sm) {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    background-color: transparent;
+  }
   .top-bar {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
+
     .call-now {
       display: flex;
       flex-direction: row;
@@ -28,11 +35,14 @@ header {
     display: flex;
     flex-direction: row;
     right: 10%;
-    @include media-breakpoint-down(sm) {
-      display: none;
-    }
+    // @include media-breakpoint-down(sm) {
+    //   display: none;
+    // }
     li {
-      margin-right: 12px;
+      margin-right: 10px;
+      @include media-breakpoint-down(sm) {
+        margin-right: 5px;
+      }
       &:last-child {
         margin-right: 26px;
       }
@@ -41,11 +51,11 @@ header {
   p,
   a {
     padding: 5px 0;
-    font-size: 16px;
-    color: $purple-brown;
+    @include fluid-font(13px, 16px);
+    color: $white;
     font-weight: $font-weight-semibold;
   }
-  p {
+  .headline {
     @include media-breakpoint-down(sm) {
       display: none;
     }
