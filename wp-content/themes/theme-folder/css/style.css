@@ -10588,10 +10588,24 @@ header #main-nav {
     right: -5px;
   }
 }
+@media (max-width: 991.98px) {
+  header #main-nav {
+    top: -10px;
+    height: 100vh;
+    background-color: white;
+  }
+}
 header #main-nav #menu-main-menu {
   width: 100%;
   display: flex;
   justify-content: space-around;
+}
+@media (max-width: 991.98px) {
+  header #main-nav #menu-main-menu {
+    top: -2px;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 header .container {
   height: 100%;
@@ -10635,6 +10649,8 @@ header nav .navbar-collapse ul {
 }
 header nav .menu-item:not(:last-child) {
   margin-right: 30px;
+  border-right: 1px solid black;
+  padding-right: 5%;
   margin-right: 20px;
 }
 @media (max-width: 1199.98px) {
@@ -10642,15 +10658,13 @@ header nav .menu-item:not(:last-child) {
     margin-right: 0px;
   }
 }
-header nav .menu-item a {
-  font-size: 18px;
-  font-weight: 600;
-  color: #000 !important;
+@media (max-width: 991.98px) {
+  header nav .menu-item:not(:last-child) {
+    padding: 20px 0;
+    border: solid 0.5px #f2f2f2;
+  }
 }
-header nav .menu-item .nav-link:hover {
-  color: #fdce00 !important;
-}
-header nav li:last-child .nav-link, header nav li:nth-of-type(8) .nav-link {
+header nav .menu-item:last-child .nav-link {
   background-color: white;
   border-color: white;
   border-radius: 20px;
@@ -10660,24 +10674,35 @@ header nav li:last-child .nav-link, header nav li:nth-of-type(8) .nav-link {
   font-weight: 700;
   transition: 0s background-color;
 }
-header nav li:last-child .nav-link:hover, header nav li:nth-of-type(8) .nav-link:hover {
+header nav .menu-item:last-child .nav-link:hover {
   transition-delay: 0.01s;
   background-color: #f7911e;
   color: #000 !important;
 }
 @media (max-width: 991.98px) {
-  header nav li:last-child .nav-link, header nav li:nth-of-type(8) .nav-link {
+  header nav .menu-item:last-child .nav-link {
     background-color: transparent;
     font-weight: 600;
     height: inherit;
     width: inherit;
+    font-size: 24px;
+    padding: 20px 0;
+    border: solid 0.5px #f2f2f2;
   }
 }
-header nav li:not(:last-of-type) {
-  border-right: 1px solid black;
-  padding-right: 5%;
+header nav .menu-item a {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000 !important;
 }
-
+@media (max-width: 991.98px) {
+  header nav .menu-item a {
+    font-size: 24px;
+  }
+}
+header nav .menu-item .nav-link:hover {
+  color: #fdce00 !important;
+}
 .navbar-logo {
   width: 100%;
   max-width: 225px;

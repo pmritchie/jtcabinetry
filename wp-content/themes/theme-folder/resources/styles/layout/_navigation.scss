@@ -19,10 +19,20 @@ header {
     @include media-breakpoint-down(lg) {
       right: -5px;
     }
+    @include media-breakpoint-down(md) {
+      top: -10px;
+      height: 100vh;
+      background-color: white;
+    }
     #menu-main-menu {
       width: 100%;
       display: flex;
       justify-content: space-around;
+      @include media-breakpoint-down(md){
+        top: -2px;
+        justify-content: center;
+        flex-direction: column;
+      }
     }
   }
 
@@ -71,29 +81,20 @@ header {
     .menu-item {
       &:not(:last-child) {
         margin-right: 30px;
+        border-right: 1px solid black;
+        padding-right: 5%;
         @include media-breakpoint-down(xl) {
           margin-right: 20px;
         }
         @include media-breakpoint-down(lg) {
           margin-right: 0px;
         }
-      }
-
-      a {
-        font-size: 18px;
-        font-weight: $font-weight-semibold;
-        color: $black !important;
-      }
-      .nav-link {
-        &:hover {
-          color: $sunflower-yellow !important;
+        @include media-breakpoint-down(md){
+          padding: 20px 0;
+          border: solid .5px $off-white;
         }
       }
-    }
-
-    li {
-      &:last-child,
-      &:nth-of-type(8) {
+      &:last-child {
         .nav-link {
           background-color: white;
           border-color: white;
@@ -113,16 +114,30 @@ header {
             font-weight: $font-weight-semibold;
             height: inherit;
             width: inherit;
+            font-size: 24px;
+            padding: 20px 0;
+            border: solid .5px $off-white;
           }
         }
       }
-      &:not(:last-of-type){
-        border-right: 1px solid black;
-        padding-right: 5%;
-        // @include media-breakpoint-down(lg){
-        //   padding-right: 2%;
-        // }
+
+      a {
+        font-size: 18px;
+        font-weight: $font-weight-semibold;
+        color: $black !important;
+        @include media-breakpoint-down(md){
+            font-size: 24px;
+        }
       }
+      .nav-link {
+        &:hover {
+          color: $sunflower-yellow !important;
+        }
+      }
+    }
+
+    li {
+   
     }
   }
 }
