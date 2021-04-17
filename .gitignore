@@ -1,0 +1,90 @@
+
+# ignore everything in the root except the 'wp-content' directory.
+/*
+!wp-content/
+!dist/
+!database/
+!.eslintrc.js
+!.prettierrc.js
+
+# ignore all files starting with .
+.*
+
+# track this file .gitignore (i.e. do NOT ignore it)
+!.gitignore
+
+# track .editorconfig file (i.e. do NOT ignore it)
+!.editorconfig
+
+# track readme.md in the root (i.e. do NOT ignore it)
+!readme.md
+
+# ignore all files that start with ~
+~*
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+
+# ignore log files and databases
+*.log
+*.sqlite
+
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+!wp-content/
+!wp-content/mu-plugins/
+!wp-content/plugins/
+!wp-content/themes/
+!wp-content/upload/
+
+# ignore these plugins
+wp-content/plugins/hello.php
+wp-content/plugins/acf-theme-code-pro
+wp-content/plugins/better-search-replace
+wp-content/plugins/debug-bar
+
+# ignore specific themes
+wp-content/themes/twenty*/
+
+# ignore node/grunt dependency directories
+node_modules/
+
+node_modules/
+vendor/
+.env
+.phpunit.result.cache
+*.log
+npm-debug.log
+yarn-error.log
+*.map
+*.idea
+*.vscode
+*.sass-cache
+*.DS_Store
+bower_components
+.npm
+.eslintcache
+*.LICENSE
+*vendor

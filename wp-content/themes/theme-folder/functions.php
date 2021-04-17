@@ -45,7 +45,7 @@ function remove_wps_width_attribute($html)
 
     function wpb_add_google_fonts()
     {
-        wp_enqueue_style('wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Slab&family=Caveat&family=Pangolin&family=Fjalla+One:400,700,800&display=swap', false);
+        wp_enqueue_style('wpb-google-fonts', "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap&family=Vidaloka&display=swap", false);
     }
     add_action('wp_enqueue_scripts', 'wpb_add_google_fonts');
 

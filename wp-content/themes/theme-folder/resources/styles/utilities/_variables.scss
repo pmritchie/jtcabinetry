@@ -21,20 +21,20 @@ $black: #000;
 $white: #fff;
 $off-white: #f2f2f2;
 $purple-brown: #231e21;
-$sunflower-yellow: #fdce00;
-$squash: #f7911e;
-$jungle-green: #027240;
+$skyblue: #8ed1dd;
+$sienna: #994b27;
+$dim-grey: #5e7372;
+$dark-dim-grey: #4e595b;
 $dark-brown: #301e10;
 $light-blue-grey: #c2d1d9;
 $brown-grey: #7d7c7c;
-$emerald: #009347;
-$sunflower-yellow-two: #fee800;
 
-$primary: $sunflower-yellow;
+
+$primary: $sienna;
 $dark: $purple-brown;
 
 $theme-colors: (
-  'primary': $sunflower-yellow,
+  'primary': $sienna,
   'secondary': $purple-brown,
   'light': $off-white,
   'dark': $dark,
@@ -54,20 +54,16 @@ $link-hover-decoration: none;
 $enable-caret: false;
 
 // Font Family
-$font-family-sans: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto,
-  'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-  'Segoe UI Symbol';
-
-$font-family-serif: 'Open Sans', sans-serif;
+$font-family-serif: 'Vidaloka', serif;
+$font-family-sans:  'Roboto', sans-serif;;
 
 // Header font family
-$font-family-secondary: 'Source Sans Pro', sans-serif;
-$font-family-peperoncino: 'Peperoncino Sans W05 Regular';
+$font-family-secondary: $font-family-serif;
 
 // Base font family
-$font-family: $font-family-serif;
+$font-family: $font-family-sans;
 $font-family-base: $font-family;
-$font-family-alt: $font-family-peperoncino;
+$font-family-alt: $font-family-serif;
 
 // Font Weight
 $font-weight-thin: 200;
@@ -115,8 +111,8 @@ $pagination-color: $black;
 $pagination-bg: $white;
 $pagination-border-color: $brown-grey;
 $pagination-hover-color: $white;
-$pagination-hover-bg: $jungle-green;
+$pagination-hover-bg: $dim-grey;
 $pagination-hover-border-color: $brown-grey;
 $pagination-active-color: $white;
-$pagination-active-bg: $emerald;
-$pagination-active-border-color: $emerald;
+$pagination-active-bg: $dark-dim-grey;
+$pagination-active-border-color: $brown-grey;
