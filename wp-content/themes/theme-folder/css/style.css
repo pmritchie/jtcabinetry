@@ -549,7 +549,7 @@ mark,
   color: #6c757d;
 }
 .blockquote-footer::before {
-  content: "\2014\A0";
+  content: "— ";
 }
 
 .img-fluid {
@@ -7221,7 +7221,6 @@ button.bg-dark:focus {
 }
 .user-select-all {
   -webkit-user-select: all !important;
-      -ms-user-select: all !important;
           user-select: all !important;
 }
 
@@ -7262,7 +7261,6 @@ button.bg-dark:focus {
 }
 
 .position-sticky {
-  position: -webkit-sticky !important;
   position: sticky !important;
 }
 
@@ -7282,9 +7280,8 @@ button.bg-dark:focus {
   z-index: 1030;
 }
 
-@supports ((position: -webkit-sticky) or (position: sticky)) {
+@supports (position: sticky) {
   .sticky-top {
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1020;
@@ -9962,10 +9959,10 @@ h3 {
   right: -25px;
 }
 .slick-prev:before {
-  content: "\2190";
+  content: "←";
 }
 [dir=rtl] .slick-prev:before {
-  content: "\2192";
+  content: "→";
 }
 
 .slick-next {
@@ -9976,10 +9973,10 @@ h3 {
   right: auto;
 }
 .slick-next:before {
-  content: "\2192";
+  content: "→";
 }
 [dir=rtl] .slick-next:before {
-  content: "\2190";
+  content: "←";
 }
 
 /* Dots */
@@ -10029,7 +10026,7 @@ h3 {
   position: absolute;
   top: 0;
   left: 0;
-  content: "\2022";
+  content: "•";
   width: 20px;
   height: 20px;
   font-family: "slick";
