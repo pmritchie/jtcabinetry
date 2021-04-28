@@ -18,7 +18,7 @@
 			</svg>
 		</a>
 	</li>
-	<li>
+	<!-- <li>
 		<a href="">
 			<svg xmlns="http://www.w3.org/2000/svg"
 				width="24"
@@ -33,7 +33,7 @@
 				</g>
 			</svg>
 		</a>
-	</li>
+	</li> -->
 	<li>
 		<a href=""
 			target="_blank">

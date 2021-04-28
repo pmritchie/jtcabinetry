@@ -23,6 +23,7 @@ h2 {
 h3 {
   @include fluid-font(21px, 28px);
   color: $purple-brown;
+  font-family: $font-family-alt;
 }
 
 h4 {

@@ -10,9 +10,9 @@
 	"scripts": {
 		"build": "cross-env NODE_ENV=development run-s mix",
 		"build:production": "cross-env NODE_ENV=production run-s clean mix",
-		"watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
 		"hot": "cross-env NODE_ENV=development run-s build mix:hot",
-		"mix": "webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"mix": "webpack --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
 		"mix:hot": "webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
 		"clean": "run-p clean:*",
 		"clean:dist": "rimraf dist",
@@ -24,7 +24,7 @@
 		"translate": "run-s -c translate:*",
 		"translate:pot": "wp i18n make-pot . ./resources/languages/sage.pot --ignore-domain --include=\"app,resources/assets,resources/views\"",
 		"translate:js": "wp i18n make-json ./resources/languages --no-purge --pretty-print",
-		"lint": "eslint **/*.js",
+		"lint": "eslint **/*.js",s
 		"lint:fix": "eslint --fix **/*.js"
 	},
 	"devDependencies": {
@@ -40,9 +40,9 @@
 		"cross-env": "^7.0.2",
 		"eslint": "^6.8.0",
 		"eslint-plugin-import": "^2.20.2",
-		"laravel-mix": "^5.0.4",
+		"laravel-mix": "^6.0.16",
 		"laravel-mix-copy-watched": "^2.2.4",
-		"laravel-mix-purgecss": "^5.0.0",
+		"laravel-mix-purgecss": "^6.0.0",
 		"npm-run-all": "^4.1",
 		"purgecss-with-wordpress": "^2.1.0",
 		"rimraf": "^3.0.2",

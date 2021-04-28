@@ -1,7 +1,7 @@
 // Footer
 
 .footer {
-  background: $black;
+  background: $dark-dim-grey;
   color: white;
   min-height: 65px;
   display: flex;
@@ -43,7 +43,7 @@
   }
   &__menu {
     @extend .footer;
-
+    justify-content: flex-end;
     > #main-nav {
       width: 100%;
     }
@@ -52,7 +52,26 @@
       a {
         color: $white;
         font-weight: $font-weight-semibold;
-        font-size: 18px;
+        font-size: 14px;
+      }
+      &:last-child {
+        .nav-link {
+          background-color: rgba(255, 255, 255, 0.5);
+          border-color: rgba(255, 255, 255, 0.5);;
+          color: white;
+          border-radius: 20px;
+          height: 30px;
+          width: 132px;
+          font-size: 12px;
+          font-weight: $font-weight-bold;
+          transition: 0s background-color;
+          text-align: center;
+          &:hover {
+            transition-delay: 0.01s;
+            background-color: rgba(255, 255, 255, 0.5);
+            color: $black !important;
+          }
+        }
       }
     }
 
@@ -77,22 +96,6 @@
         margin-top: 20px;
         flex-direction: column;
         text-align: center;
-      }
-
-      li {
-        &:nth-child(4) {
-          width: 100%;
-          max-width: 158px;
-          cursor: pointer;
-          a {
-            @extend .btn-primary;
-            height: 36px !important;
-            padding: 0 !important;
-            color: $black;
-            font-weight: $font-weight-bold;
-            text-transform: capitalize;
-          }
-        }
       }
     }
   }
