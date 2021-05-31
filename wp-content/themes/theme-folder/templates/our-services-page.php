@@ -1,10 +1,10 @@
-<?php /* Template Name: Products Page*/ ?>
+<?php /* Template Name: Services Page*/ ?>
 
 <?php get_header(); ?>
 
 <!--Hero-->
-<?php if (have_rows('products_hero')) : ?>
-<?php while (have_rows('products_hero')) : the_row(); ?>
+<?php if (have_rows('services_hero')) : ?>
+<?php while (have_rows('services_hero')) : the_row(); ?>
 <section class="section hero-section">
 <div class="overlay"></div>
   <div class="container">
@@ -20,8 +20,9 @@
 </section>
 <?php endwhile; ?>
 <?php endif; ?>
-<?php if (have_rows('products_hero')) : ?>
-<?php while (have_rows('products_hero')) : the_row(); ?>
+
+<?php if (have_rows('services_section')) : ?>
+<?php while (have_rows('services_section')) : the_row(); ?>
 <section class="section feature-section">
   <div class="containter">
     <div class="row">
@@ -66,8 +67,3 @@
 </section>
 <?php endwhile; ?>
 <?php endif; ?>
-
-<!--/Hero-->
-
-
-<?php get_footer(); ?>
