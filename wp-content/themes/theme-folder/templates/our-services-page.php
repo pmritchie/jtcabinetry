@@ -21,49 +21,47 @@
 <?php endwhile; ?>
 <?php endif; ?>
 
-<?php if (have_rows('services_section')) : ?>
-<?php while (have_rows('services_section')) : the_row(); ?>
+
 <section class="section feature-section">
-  <div class="containter">
-    <div class="row">
-      <div class="col-lg-3 col-md-4 col-sm-12">
-        <div class="feature-box">
+  <div class="container">
+  <?php if (have_rows('service_one')) : ?>
+  <?php while (have_rows('service_one')) : the_row(); ?>
+    <div class="row row-one">
+     <div class="col-lg-6 col-md-6 col-sm-12 left-col">
+     <div class="content-wrapper">
+        <h3><?php the_sub_field('title'); ?></h3>
+        <p><?php the_sub_field('content'); ?></p>
+       </div>
+     </div>
+     <div class="col-lg-6 col-md-6 col-sm-12 right-col">
+     <?php $image_one = get_sub_field('image'); ?>
           <div class="img-wrapper">
-            <img src="<?php the_sub_field('')?>" />
+            <img src="<?php echo $image_one; ?>" />
           </div>
-          <div class="content-wrapper">
-            <h4><?php the_sub_field('title_one')?></h4>
-            <p><?php the_sub_field('content_one')?></p>
-            <a href="<?php echo $feature_link_one['url']; ?>"><?php echo $feature_link['title']; ?></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-12">
-        <div class="feature-box">
-          <div class="img-wrapper">
-            <img src="<?php the_sub_field('product_image_one')?>" />
-          </div>
-          <div class="content-wrapper">
-            <h4><?php the_sub_field('title_one')?></h4>
-            <p><?php the_sub_field('content_one')?></p>
-            <a href="<?php echo $feature_link_one['url']; ?>"><?php echo $feature_link['title']; ?></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-12">
-        <div class="feature-box">
-          <div class="img-wrapper">
-            <img src="<?php the_sub_field('')?>" />
-          </div>
-          <div class="content-wrapper">
-            <h4><?php the_sub_field('title_one')?></h4>
-            <p><?php the_sub_field('content_one')?></p>
-            <a href="<?php echo $feature_link_one['url']; ?>"><?php echo $feature_link['title']; ?></a>
-          </div>
-        </div>
       </div>
     </div>
+    <?php endwhile; ?>
+    <?php endif; ?>
+
+    <?php if (have_rows('service_two')) : ?>
+    <?php while (have_rows('service_two')) : the_row(); ?>
+    <div class="row row-two">
+     <div class="col-lg-6 col-md-6 col-sm-12 left-col">
+       <div class="content-wrapper">
+        <h3><?php the_sub_field('title'); ?></h3>
+        <p><?php the_sub_field('content'); ?></p>
+       </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 right-col">
+        <?php $image_two = get_sub_field('image'); ?>
+        <div class="img-wrapper">
+          <img src="<?php echo $image_two; ?>" />
+        </div>
+     </div>
+    </div>
+    <?php endwhile; ?>
+    <?php endif; ?>
   </div>
 </section>
-<?php endwhile; ?>
-<?php endif; ?>
+
+<?php get_footer(); ?>

@@ -1,0 +1,68 @@
+.our-products {
+    .hero-section {
+        height: 600px;
+        background-image: url('/wp-content/uploads/2021/06/IMG_5254.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        display: flex;
+        h1, h3 {
+            color: white;
+        }  
+        h1 {
+            margin: 30px 0;
+        }
+    }
+    .feature-section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        background-color: #f4f4f4;
+        .row {
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .feature-box {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            background-color: #fff;
+            -webkit-box-shadow: 0px 7px 7px 7px $gray-500;
+            -moz-box-shadow: 0px 0px 8px 2px $gray-500;
+            box-shadow: 0px 0px 8px 2px $gray-500;
+            .image-box {
+                width: 50%;
+                display: flex;
+                justify-content: space-around;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .content-wrapper {
+                width: 50%;
+            }
+            .image-box,
+            .content-wrapper {
+                padding: 15px
+            }
+            .img-wrapper {
+                width: 100%;
+                max-width: 35%;
+                margin-bottom: 15px;
+            }
+            ul {
+                li {
+                    margin-left: 10px;
+                    font-size: 14px;
+                    list-style-type: disc;
+                    ::marker {
+                        margin-left: 10px;
+                    }
+                }
+            }
+            h4 {
+                text-decoration: underline;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
