@@ -20,18 +20,20 @@ header {
       right: -5px;
     }
     @include media-breakpoint-down(md) {
-      top: -10px;
+      top: 15px;
       height: 100vh;
-      background-color: white;
+      background-color: #7d7c7c;
     }
     #menu-main-menu {
       display: flex;
+      justify-content: flex-end;
       flex-direction: row;
       width: 100%;
       @include media-breakpoint-down(md){
         top: -2px;
         justify-content: center;
         flex-direction: column;
+   
       }
     }
   }
@@ -43,14 +45,16 @@ header {
   nav {
     position: relative;
     display: flex;
-    height: 100px;
+    height: 83px;
     .navbar-brand {
       display: flex;
       flex-direction: row;
-      align-content: center;
+      justify-content: space-between;
       text-align: center;
+      width: 100%;
+      max-width: 200px;
       .custom-logo-link {
-        margin-right: 25px;
+       
       }
       img {
         width: 100%;
@@ -89,28 +93,31 @@ header {
       width: 100vw;
       ul {
         background: transparent;
-        padding-bottom: 21px;
       }
     }
 
     .menu-item {
         border-right: 1px solid white;
-        // padding-right: 7%;
-        // margin: 0 auto;
+        padding: 0 3%;
         @include media-breakpoint-down(md){
           padding: 20px 0;
-          border: solid .5px $off-white;
+          border-right: none;
+          border-bottom: 1px solid white;
+          background-color: #7d7c7c;
         } 
       &:last-child {
         border-right: none;
+        @include media-breakpoint-down(md) {
+          border: none;
+        }
         .nav-link {
           background-color: rgba(255, 255, 255, 0.5);
           border-color: rgba(255, 255, 255, 0.5);;
           color: white;
           border-radius: 20px;
-          height: 40px;
+          height: 35px;
           width: 132px;
-          font-size: 18px;
+          font-size: 16px;
           font-weight: $font-weight-bold;
           transition: 0s background-color;
           &:hover {
@@ -118,24 +125,19 @@ header {
             background-color: rgba(255, 255, 255, 0.5);
             color: $black !important;
           }
+
           @include media-breakpoint-down(md) {
-            background-color: transparent;
-            font-weight: $font-weight-semibold;
-            height: inherit;
-            width: inherit;
-            font-size: 24px;
-            padding: 20px 0;
-            border: solid .5px $off-white;
+            margin: 0 auto;
           }
         }
       }
       a {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: $font-weight-semibold;
         color: $white !important;
-        @include media-breakpoint-down(md){
-            font-size: 24px;
-        }
+        // @include media-breakpoint-down(md){
+        //     font-size: 24px;
+        // }
       }
       .nav-link {
         &:hover {

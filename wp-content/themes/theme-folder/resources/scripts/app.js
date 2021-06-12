@@ -41,7 +41,6 @@ $(document).ready(function() {
   // });
 
   $('.hero-slider').slick({
-    adaptiveHeight: true,
     mobileFirst: true,
     dots: false,
     infinite: true,

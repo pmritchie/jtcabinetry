@@ -1,0 +1,39 @@
+.contact-us {
+    background-color: #f4f4f4;
+    .section {
+        margin-top: 140px;
+        @include media-breakpoint-down(md){
+            margin-top: 80px;
+        }
+    }
+    .hero-row {
+        margin: 50px 0px;
+        justify-content: center;
+        .hero-content {
+            text-align: center;
+            h1 {
+                margin: 45px 0px;
+            }
+            .img-wrapper {
+                width: 100%;
+                max-width: 250px;
+                display: flex;
+                justify-content: center;
+                margin: 40px auto 0;
+            }
+        }
+        .form-column {
+            margin-top: 45px;
+            display: flex ;
+            justify-content: center;
+        }
+        .content-col {
+            @include media-breakpoint-down(md){
+                text-align: center;
+            }
+        }
+        @include media-breakpoint-down(sm){
+            flex-direction: column;
+        }
+    }
+}

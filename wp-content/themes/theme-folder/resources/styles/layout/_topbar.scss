@@ -22,6 +22,9 @@ header {
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
+    @include media-breakpoint-down(sm) {
+      justify-content: flex-end;
+    }
 
     .call-now {
       display: flex;
@@ -35,9 +38,9 @@ header {
     display: flex;
     flex-direction: row;
     right: 10%;
-    // @include media-breakpoint-down(sm) {
-    //   display: none;
-    // }
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
     li {
       margin-right: 10px;
       @include media-breakpoint-down(sm) {
@@ -61,39 +64,4 @@ header {
     }
   }
 }
-// .top-bar {
-//   padding-top: 4px;
 
-//   .container {
-//     @include media-breakpoint-up(md) {
-//       max-width: 1240px;
-//     }
-//   }
-
-//   .top-bar-inner {
-//     justify-content: flex-end;
-//     display: flex;
-//     width: 100%;
-//     align-items: center;
-
-//     .social-link {
-//       &:not(:last-child) {
-//         @include rem(margin-right, 7px);
-//       }
-//     }
-
-//     .call-us {
-//       @include rem(font-size, 16px);
-//       @include rem(
-//         (
-//           font-size: 16px,
-//           margin-left: (
-//             10px,
-//           ),
-//         )
-//       );
-//       color: $purple-brown;
-//       font-weight: $font-weight-semibold;
-//     }
-//   }
-// }
