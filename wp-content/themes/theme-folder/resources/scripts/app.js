@@ -22,13 +22,15 @@ const lazyLoad = target => {
   io.observe(target);
 };
 
-// $(window).scroll(function() {
-//   if ($(document).scrollTop() == 0) {
-//     $("#main-header").removeClass("is-sticky");
-//   } else {
-//     $("#main-header").addClass("is-sticky");
-//   }
-// });
+$(window).scroll(function() {
+  if ($(document).scrollTop() < 120) {
+    $(".sticky-container").removeClass("is-sticky");
+    $("topbar-row").addClass("is-hidden");
+  } else {
+    $(".sticky-container").addClass("is-sticky");
+    $("topbar-row").addClass("display-block");
+  }
+});
 
 $(document).ready(function() {
   // Bootstrap dropdown

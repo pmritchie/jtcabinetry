@@ -71,6 +71,7 @@
 @import 'layout/topbar.scss';
 @import 'layout/grid';
 @import 'layout/footer';
+@import 'layout/sticky-form';
 
 // Custom components
 // @import 'components/buttons';
@@ -87,4 +88,6 @@
 @import 'pages/our-products-page';
 @import 'pages/our-services-page';
 @import 'pages/contact-page.scss';
-// @import 'pages/press';
+
+// Template parts
+@import 'template-parts/section-cta.scss';

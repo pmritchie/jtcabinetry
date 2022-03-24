@@ -6,6 +6,8 @@ if (!class_exists('BVBrandCallback')) :
 class BVBrandCallback extends BVCallbackBase {
 	public $settings;
 
+	const BRAND_WING_VERSION = 1.0;
+
 	public function __construct($callback_handler) {
 		$this->settings = $callback_handler->settings;
 	}

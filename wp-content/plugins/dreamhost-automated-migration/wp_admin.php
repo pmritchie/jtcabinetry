@@ -89,8 +89,6 @@ class DHWPAdmin {
 	public function dhsecAdminMenu($hook) {
 		if ($hook === 'toplevel_page_dreamhost') {
 			wp_register_style('bvdh_form-styles', plugins_url('assets/css/style.css',__FILE__ ));
-			wp_enqueue_style('bvdh_normalize');
-			wp_enqueue_style('bvdh_skeleton');
 			wp_enqueue_style('bvdh_form-styles');
 		}
 	}

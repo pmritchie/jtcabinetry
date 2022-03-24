@@ -11,7 +11,6 @@
         <a href="<?php echo esc_url(home_url()); ?>">
           <?php echo get_custom_logo(); ?>
         </a>
-        <p class="name">JT Cabinetry</p>
       </div>
   
       <button class="navbar-toggler"

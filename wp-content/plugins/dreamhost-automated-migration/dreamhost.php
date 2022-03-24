@@ -5,7 +5,7 @@ Plugin URI: https://www.dreamhost.com
 Description: The easiest way to migrate your site to DreamHost.
 Author: DreamHost
 Author URI: https://www.dreamhost.com
-Version: 4.41
+Version: 4.69
 Network: True
  */
 
@@ -28,6 +28,7 @@ Network: True
 /* Global response array */
 
 if (!defined('ABSPATH')) exit;
+##OLDWPR##
 
 require_once dirname( __FILE__ ) . '/wp_settings.php';
 require_once dirname( __FILE__ ) . '/wp_site_info.php';
@@ -52,6 +53,7 @@ register_activation_hook(__FILE__, array($wp_action, 'activate'));
 register_deactivation_hook(__FILE__, array($wp_action, 'deactivate'));
 
 add_action('wp_footer', array($wp_action, 'footerHandler'), 100);
+add_action('clear_bv_services_config', array($wp_action, 'clear_bv_services_config'));
 
 ##WPCLIMODULE##
 if (is_admin()) {
@@ -69,7 +71,6 @@ if (is_admin()) {
 	add_action('admin_head', array($wpadmin, 'removeAdminNotices'), 3);
 	##ACTIVATEWARNING##
 	add_action('admin_enqueue_scripts', array($wpadmin, 'dhsecAdminMenu'));
-	##REMOVEDEACTIVATIONLINK##
 }
 
 
@@ -98,6 +99,7 @@ if ((array_key_exists('bvplugname', $_REQUEST)) && ($_REQUEST['bvplugname'] == "
 		##BVBASEPATH##
 
 		require_once dirname( __FILE__ ) . '/callback/handler.php';
+
 		$params = $request->processParams($_REQUEST);
 		if ($params === false) {
 			$resp = array(
@@ -130,7 +132,10 @@ if ((array_key_exists('bvplugname', $_REQUEST)) && ($_REQUEST['bvplugname'] == "
 		$response->terminate($resp);
 	}
 } else {
-	##PROTECTMODULE##
-	##DYNSYNCMODULE##
+	if ($bvinfo->hasValidDBVersion()) {
+		##PROTECTMODULE##
+		##DYNSYNCMODULE##
+		##ACTLOGMODULE##
+	}
 	##WPAUTOUPDATEBLOCKMODULE##
 }

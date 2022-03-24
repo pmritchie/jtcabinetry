@@ -30,14 +30,19 @@ $light-blue-grey: #c2d1d9;
 $brown-grey: #7d7c7c;
 
 
+$blue: #8ed1dd;
+$black: #000000;
+$gray: rgba(255, 255, 255, 0.5);
+
+
 $primary: $sienna;
 $dark: $purple-brown;
 
 $theme-colors: (
-  'primary': $sienna,
-  'secondary': $purple-brown,
-  'light': $off-white,
-  'dark': $dark,
+  'primary': $blue,
+  'secondary': $white,
+  'light': $skyblue,
+  'dark': $black,
 );
 
 // Default element colors
@@ -90,8 +95,8 @@ $btn-box-shadow: none;
 $btn-font-family: $font-family;
 $btn-font-size: 13 * 16;
 $btn-font-weight: $font-weight-medium;
-$btn-link-color: $purple-brown;
-$btn-link-hover-color: $white;
+$btn-link-color: $gray;
+$btn-link-hover-color: $blue;
 
 // Inputs
 $label-margin-bottom: 0.5rem;

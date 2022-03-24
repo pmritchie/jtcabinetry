@@ -5,6 +5,8 @@ if (!class_exists('BVAccountCallback')) :
 class BVAccountCallback extends BVCallbackBase {
 	public $account;
 	public $settings;
+	
+	const ACCOUNT_WING_VERSION = 1.0;
 
 	public function __construct($callback_handler) {
 		$this->account = $callback_handler->account;

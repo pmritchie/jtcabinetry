@@ -1,0 +1,31 @@
+.cta-section {
+    padding: 3em 0;
+    .row {
+        .col-12 {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            p {
+                font-size: 16px;
+            }
+            .button-wrapper {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                a {
+                    margin: 30px auto 0;
+                    border: none;
+                    box-shadow: 0px 0px 8px 2px #adb5bd;
+                    background-color: #f4f4f4;
+                    max-width: 200px;
+                    font-size: 20px;
+                    text-transform: uppercase;
+                    color: $black;
+                    padding: 10px 10px;
+                    border-radius: 25px;
+                }
+            }
+        }
+    }
+}

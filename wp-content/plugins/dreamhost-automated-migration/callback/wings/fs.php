@@ -9,10 +9,10 @@ class BVFSCallback extends BVCallbackBase {
 	public $account;
 
 	public static $cwAllowedFiles = array(".htaccess", ".user.ini", "malcare-waf.php");
+	const FS_WING_VERSION = 1.0;
 
 	public function __construct($callback_handler) {
 		$this->account = $callback_handler->account;
-		$this->bvinfo = $callback_handler->bvinfo;
 	}
 
 	function fileStat($relfile, $md5 = false) {
@@ -169,7 +169,7 @@ class BVFSCallback extends BVCallbackBase {
 			if (is_dir($absfile) && !is_link($absfile)) {
 				$fdata['is_dir'] = true;
 			} else {
-				if (!is_readable($file)) {
+				if (!is_readable($absfile)) {
 					$fdata['error'] = 'file not readable';
 				} else {
 					if ($withContent === true) {
@@ -246,8 +246,6 @@ class BVFSCallback extends BVCallbackBase {
 	function process($request) {
 		$params = $request->params;
 		$stream_init_info = BVStream::startStream($this->account, $request);
-
-		
 
 		if (array_key_exists('stream', $stream_init_info)) {
 			$this->stream = $stream_init_info['stream'];

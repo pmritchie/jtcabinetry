@@ -40,6 +40,46 @@ if (!class_exists('BVCallbackRequest')) :
 			return array_key_exists('apicall', $this->params);
 		}
 
+		public function curlRequest($url, $body) {
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_POST, 1);
+			curl_setopt($ch, CURLOPT_TIMEOUT, 15);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($body));
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			return curl_exec($ch);
+		}
+
+		public function fileGetContentRequest($url, $body) {
+			$options = array(
+				'http' => array(
+					'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+					'method'  => 'POST',
+					'content' => http_build_query($body)
+				)
+			);
+
+			$context  = stream_context_create($options);
+			return file_get_contents($url, false, $context);
+		}
+
+		public function http_request($url, $body) {
+			if (in_array('curl', get_loaded_extensions())) {
+				return $this->curlRequest($url, $body);
+			} else {
+				return $this->fileGetContentRequest($url, $body);
+			} 
+		}
+
+		public function get_params_via_api($params_key, $apiurl) {
+			$res = $this->http_request($apiurl, array('bvkey' => $params_key));
+
+			if ($res === FALSE) {
+				return false;
+			}
+
+			return $res;
+		}
+
 		public function info() {
 			$info = array(
 				"requestedsig" => $this->sig,
@@ -70,11 +110,6 @@ if (!class_exists('BVCallbackRequest')) :
 			if (array_key_exists('op_reset', $in_params) && function_exists('output_reset_rewrite_vars'))
 				@output_reset_rewrite_vars();
 
-			if (array_key_exists('binhead', $in_params)) {
-				header("Content-type: application/binary");
-				header('Content-Transfer-Encoding: binary');
-			}
-
 			if (array_key_exists('concat', $in_params)) {
 				foreach ($in_params['concat'] as $key) {
 					$concated = '';
@@ -83,6 +118,13 @@ if (!class_exists('BVCallbackRequest')) :
 						$concated .= $in_params[$key."_bv_".$i];
 					}
 					$in_params[$key] = $concated;
+				}
+			}
+
+			if (isset($in_params['bvpdataviaapi']) && isset($in_params['bvapiurl'])) {
+				$pdata = $this->get_params_via_api($in_params['bvpdataviaapi'], $in_params['bvapiurl']);
+				if ($pdata !== false) {
+					$in_params["bvprms"] = $pdata;
 				}
 			}
 

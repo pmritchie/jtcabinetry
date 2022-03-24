@@ -88,6 +88,14 @@ if (!class_exists('BVCallbackHandler')) :
 				require_once dirname( __FILE__ ) . '/wings/fs_write.php';
 				$module = new BVFSWriteCallback();
 				break;
+			case 'actlg':
+				require_once dirname( __FILE__ ) . '/wings/actlog.php';
+				$module = new BVActLogCallback($this);
+				break;
+			case 'speed':
+				require_once dirname( __FILE__ ) . '/wings/speed.php';
+				$module = new BVSpeedCallback($this);
+				break;
 			default:
 				require_once dirname( __FILE__ ) . '/wings/misc.php';
 				$module = new BVMiscCallback($this);

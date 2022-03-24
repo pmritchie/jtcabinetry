@@ -39,6 +39,12 @@ class DHWPSiteInfo {
 		return is_main_site();
 	}
 
+	public function getMainSiteId() {
+		if (!function_exists('get_main_site_id'))
+			return 0;
+		return get_main_site_id();
+	}
+
 	public function info() {
 		$info = array();
 		$this->basic($info);

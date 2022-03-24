@@ -4,6 +4,15 @@ if (!defined('ABSPATH')) exit;
 if (!class_exists('BVCallbackBase')) :
 
 class BVCallbackBase {
+
+	public static $wing_infos = array("BRAND_WING_VERSION" => '1.0',
+		"DB_WING_VERSION" => '1.0',
+		"ACCOUNT_WING_VERSION" => '1.0',
+		"MISC_WING_VERSION" => '1.1',
+		"FS_WING_VERSION" => '1.0',
+		"INFO_WING_VERSION" => '1.1',
+		);
+
 	public function objectToArray($obj) {
 		return json_decode(json_encode($obj), true);
 	}

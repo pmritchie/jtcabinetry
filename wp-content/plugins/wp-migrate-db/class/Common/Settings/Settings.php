@@ -3,6 +3,7 @@
 namespace DeliciousBrains\WPMDB\Common\Settings;
 
 use DeliciousBrains\WPMDB\Common\Filesystem\Filesystem;
+use DeliciousBrains\WPMDB\Common\Helpers;
 use DeliciousBrains\WPMDB\Common\Util\Util;
 
 class Settings
@@ -47,6 +48,8 @@ class Settings
 
     public function get_settings_for_frontend()
     {
+        // Always get fresh settings for the frontend.
+        $this->load_settings();
         $existing_settings = $this->settings;
 
         if (!empty($existing_settings['licence'])) {
@@ -55,13 +58,6 @@ class Settings
         }
 
         $existing_settings['plugins']         = $this->filesystem->get_local_plugins();
-        $existing_settings['plugin_disabled'] = false;
-
-        // If pretty permalinks are not enabled, disable the plugin
-        // @TODO fix me - this only works for multisites with 1 as the BLOG_ID_CURRENT_SITE
-        if (empty(get_option('permalink_structure'))){
-            $existing_settings['plugin_disabled'] = true;
-        }
 
         return $existing_settings;
     }
@@ -120,6 +116,11 @@ class Settings
 
         if ($update_settings) {
             update_site_option('wpmdb_settings', $this->settings);
+        }
+
+        $user_licence = Helpers::get_user_licence_key();
+        if ( $user_licence ) {
+            $this->settings['licence'] = $user_licence;
         }
 
         self::$static_settings = $this->settings;

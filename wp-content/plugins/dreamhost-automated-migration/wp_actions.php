@@ -38,7 +38,12 @@ if (!class_exists('DHWPAction')) :
 		public static function uninstall() {
 			##CLEARPTCONFIG##
 			##CLEARIPSTORE##
-		 	##CLEARDYNSYNCCONFIG##
+			##CLEARDYNSYNCCONFIG##
+			do_action('clear_bv_services_config');
+		}
+
+		public function clear_bv_services_config() {
+			$this->settings->deleteOption($this->bvinfo->services_option_name);
 		}
 
 		public function footerHandler() {

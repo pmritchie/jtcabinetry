@@ -1,0 +1,58 @@
+#wpcf7-f181-o1{
+padding: 20px 0;
+   @include media-breakpoint-down(sm) {
+       display: none;
+   }
+    form {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        align-items: center;
+        height: 100%;
+        max-height: 90px;
+        label {
+            color: transparent;
+            display: flex;
+            justify-content: center;    
+            flex-direction: column;
+        }
+        p, input {
+            width: 100%;
+            max-width: 175px;
+            height: 35px;
+        }
+        p {
+            margin: 10px 8px;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        textarea {
+            width: 100%;
+            max-width: 150px;
+            height: 100%;
+            max-height: 150px;
+        }
+    }
+}
+.sticky-container {
+ background-color: rgba(142, 209, 221, .5);
+    .sticky-form {
+        text-align: center;
+    }
+    .form-button {
+        color: white;
+        font-size: 18px;
+        font-weight: 800;
+        display: none;
+    }
+    @include media-breakpoint-down(sm){
+        background-color: rgba(142, 209, 221, 1);
+        .form-button {
+            display: block;
+        }
+    }
+}

@@ -11,11 +11,12 @@ class BVDBCallback extends BVCallbackBase {
 
 	public static $bvTables = array("fw_requests", "lp_requests", "ip_store");
 
+	const DB_WING_VERSION = 1.0;
+
 	public function __construct($callback_handler) {
 		$this->db = $callback_handler->db;
 		$this->account = $callback_handler->account;
 		$this->siteinfo = $callback_handler->siteinfo;
-		$this->bvinfo = $callback_handler->bvinfo;
 	}
 
 	public function getLastID($pkeys, $end_row) {
@@ -41,9 +42,12 @@ class BVDBCallback extends BVCallbackBase {
 			$rows = $this->db->getTableContent($table, '*', $filter, $bsize, $offset);
 			$srows = sizeof($rows);
 			$data = array();
+			$data["table_name"] = $tname;
 			$data["offset"] = $offset;
 			$data["size"] = $srows;
-			$data["md5"] = md5(serialize($rows));
+			$serialized_rows = serialize($rows);
+			$data['md5'] = md5($serialized_rows);
+			$data['length'] = strlen($serialized_rows);
 			array_push($tinfo, $data);
 			if (!empty($pkeys) && $srows > 0) {
 				$end_row = end($rows);
@@ -64,12 +68,64 @@ class BVDBCallback extends BVCallbackBase {
 		return $result;
 	}
 
+	public function getCreateTableQueries($tables) {
+		$resp = array();
+		foreach($tables as $table) {
+			$tname = urldecode($table);
+			$resp[$tname] = array("create" => $this->db->showTableCreate($table)); 
+		}
+		return $resp;
+	}
+
+	public function checkTables($tables, $type) {
+		$resp = array();
+		foreach($tables as $table) {
+			$tname = urldecode($table);
+			$resp[$tname] = array("status" => $this->db->checkTable($table, $type));
+		}
+		return $resp;
+	}
+
+	public function describeTables($tables) {
+		$resp = array();
+		foreach($tables as $table) {
+			$tname = urldecode($table);
+			$resp[$tname] = array("description" => $this->db->describeTable($table));
+		}
+		return $resp;
+	}
+
+	public function checkTablesExist($tables) {
+		$resp = array();
+		foreach($tables as $table) {
+			$tname = urldecode($table);
+			$resp[$tname] = array("tblexists" => $this->db->isTablePresent($table));
+		}
+		return $resp;
+	}
+
+	public function getTablesRowCount($tables) {
+		$resp = array();
+		foreach($tables as $table) {
+			$tname = urldecode($table);
+			$resp[$tname] = array("count" => $this->db->rowsCount($table));
+		}
+		return $resp;
+	}
+
+	public function getTablesKeys($tables) {
+		$resp = array();
+		foreach($tables as $table) {
+			$tname = urldecode($table);
+			$resp[$tname] = array("keys" => $this->db->tableKeys($table));
+		}
+		return $resp;
+	}
+
 	public function process($request) {
 		$db = $this->db;
 		$params = $request->params;
 		$stream_init_info = BVStream::startStream($this->account, $request);
-
-		
 
 		if (array_key_exists('stream', $stream_init_info)) {
 			$this->stream = $stream_init_info['stream'];
@@ -101,6 +157,31 @@ class BVDBCallback extends BVCallbackBase {
 				$table = urldecode($params['table']);
 				$resp = array("create" => $db->showTableCreate($table));
 				break;
+			case "tblskys":
+				$tables = $params['tables'];
+				$resp = $this->getTablesKeys($tables);
+				break;
+			case "getmlticrt":
+				$tables = $params['tables'];
+				$resp = $this->getCreateTableQueries($tables);
+				break;
+			case "desctbls":
+				$tables = $params['tables'];
+				$resp = $this->describeTables($tables);
+				break;
+			case "mltirwscount":
+				$tables = $params['tables'];
+				$resp = $this->getTablesRowCount($tables);
+				break;
+			case "chktabls":
+				$tables = $params['tables'];
+				$type = urldecode($params['type']);
+				$resp = $this->checkTables($tables, $type);
+				break;
+			case "chktablsxist":
+				$tables = $params['tables'];
+				$resp = $this->checkTablesExist($tables);
+				break;
 			case "getrowscount":
 				$table = urldecode($params['table']);
 				$resp = array("count" => $db->rowsCount($table));
@@ -124,6 +205,32 @@ class BVDBCallback extends BVCallbackBase {
 				$result["rows"] = $rows;
 				$resp = $result;
 				break;
+			case "multitablecontent":
+				$tableParams = $params['table_params'];
+				$resp = array();
+				foreach($tableParams as $tableParam) {
+					$result = array();
+					$identifier = $tableParam['identifier'];
+					$table = $tableParam['table'];
+					$tname = $tableParam['tname'];
+					$fields = $tableParam['fields'];
+					$filter = (array_key_exists('filter', $tableParam)) ? $tableParam['filter'] : "";
+					$limit = $tableParam['limit'];
+					$offset = $tableParam['offset'];
+					$pkeys = (array_key_exists('pkeys', $tableParam)) ? $tableParam['pkeys'] : array();
+					$result['timestamp'] = time();
+					$result['table_name'] = $tname;
+					$rows = $db->getTableContent($table, $fields, $filter, $limit, $offset);
+					$srows = sizeof($rows);
+					if (!empty($pkeys) && $srows > 0) {
+						$end_row = end($rows);
+						$result['last_ids'] = $this->getLastID($pkeys, $end_row);
+					}
+					$result["rows"] = $rows;
+					$result["size"] = $srows;
+					$resp[$identifier] = $result;
+				}
+				break;
 			case "tableinfo":
 				$table = urldecode($params['table']);
 				$offset = intval(urldecode($params['offset']));
@@ -134,6 +241,22 @@ class BVDBCallback extends BVCallbackBase {
 				$tname = urldecode($params['tname']);
 				$pkeys = (array_key_exists('pkeys', $params)) ? $params['pkeys'] : array();
 				$resp = $this->getTableData($table, $tname, $rcount, $offset, $limit, $bsize, $filter, $pkeys, false);
+				break;
+			case "getmulttables":
+				$result = array();
+				$tableParams = $params['table_params'];
+				$resp = array();
+				foreach($tableParams as $tableParam) {
+					$table = urldecode($tableParam['table']);
+					$tname = urldecode($tableParam['tname']);
+					$rcount = intval(urldecode($tableParam['rcount']));
+					$filter = (array_key_exists('filter', $tableParam)) ? urldecode($tableParam['filter']) : "";
+					$limit = intval(urldecode($tableParam['limit']));
+					$offset = intval(urldecode($tableParam['offset']));
+					$bsize = intval(urldecode($tableParam['bsize']));
+					$pkeys = (array_key_exists('pkeys', $tableParam)) ? $tableParam['pkeys'] : array();
+					$resp[$tname] = $this->getTableData($table, $tname, $rcount, $offset, $limit, $bsize, $filter, $pkeys, true);
+				}
 				break;
 			case "uploadrows":
 				$table = urldecode($params['table']);
