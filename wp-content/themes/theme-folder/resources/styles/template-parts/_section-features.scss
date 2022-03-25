@@ -1,0 +1,83 @@
+.section-features {
+   
+    .row {
+        position: relative;
+        margin-bottom: 30px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+        @media (min-width: 992px){
+            flex-direction: row;
+            padding: 0;
+        }
+        .skew-wrapper {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            width: 100%;
+            .skew-background {
+                position: relative;
+                background-color: $skyblue;
+                transform-origin: 100% 0;
+                width: 100%;
+                height: 55vw;
+          
+               
+                @media (min-width: 992px) {
+                    z-index: 99;
+                    width: 62%;
+                    height: 100%;
+                    -webkit-transform: skew(-18deg,0deg);
+                    transform: skew(-18deg,0deg);
+                    margin-top: 0;
+                    
+                }
+            }
+
+        }
+        .feature-col {
+            position: relative;
+            z-index: 99;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+            .feature-box {
+                text-align: center;
+                @media (min-width: 992px){
+                    padding: 0 30px;
+                    text-align: left;
+                }
+            }
+        }
+    }
+    .row-reverse {
+        flex-direction: column;
+        @media (min-width: 992px){
+            flex-direction: row-reverse;
+        }
+        .skew-background-reverse {
+            position: relative;
+           
+            transform-origin: 100% 0;
+            width: 100%;
+            height: 100%;
+       
+            @media (min-width: 992px) {
+                z-index: 99;
+                width: 59%;
+                height: 100%;
+                margin-left: auto;
+                -webkit-transform: skew(13deg,0deg);
+                transform: skew(13deg,0deg);
+                margin-top: 0;
+                background-color: $skyblue;
+            }
+        }
+    }
+
+}
